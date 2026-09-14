@@ -3,9 +3,9 @@
 Contributors: eventespresso, garthkoyle, pebblo, charliespider, mohsinsr, alexkuc, knazart
 Tags: events, calendar, event, schedule, organizer
 Donate link: https://calendarplus.io
-Stable tag: 1.0.13
+Stable tag: 1.0.14
 Requires at least: 6.0
-Tested up to: 6.9
+Tested up to: 7.1
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -25,7 +25,7 @@ Looking for additional features like recurring events, electronic tickets, ticke
 
 Whether your event calendar is new and growing or your events calendar is big and full, Calendar+ can make any organization look good; small businesses, musicians, venues, restaurants, non-profits, schools, associations, clubs, fundraisers, agencies, etc. all look better and can reach their audience better with Calendar+
 
-## :star:️ Features
+== :star:️ Features ==
 
 :heavy_check_mark: Quickly create events (Title, start/end date/time, description, featured image)
 :heavy_check_mark: Enable or disable views with tooltips (month, week, day views, each mobile optimized)
@@ -41,8 +41,7 @@ Whether your event calendar is new and growing or your events calendar is big an
 :heavy_check_mark: Easily personalize your calendar with over 20 customizable color settings using the built-in color picker
 :heavy_check_mark: and more!
 
-
-## :coffee:️ Event Espresso Decaf Includes:
+== :coffee:️ Event Espresso Decaf Includes: ==
 
 :heavy_check_mark: Saved venues
 :heavy_check_mark: Widget: Upcoming events list
@@ -55,7 +54,7 @@ Whether your event calendar is new and growing or your events calendar is big an
 :heavy_check_mark: Debug mode for developers
 :heavy_check_mark: Dozens of add-on plugin extensions
 
-## :coffee:️:coffee:️ Event Espresso Premium Includes:
+== :coffee:️:coffee:️ Event Espresso Premium Includes: ==
 
 :heavy_check_mark: Collect attendee information for each event ticket or registration sold
 :heavy_check_mark: Sell tickets and registrations to groups
@@ -69,7 +68,6 @@ Whether your event calendar is new and growing or your events calendar is big an
 :heavy_check_mark: Automate and customize confirmation emails to staff and attendees
 :heavy_check_mark: Google Maps
 :heavy_check_mark: and much more.
-
 
 == :ring_buoy: Documentation ==
 
@@ -91,13 +89,13 @@ Our Premium Plugins and Services:
 == Installation ==
 
 From WordPress Dashboard:
-- Go to Plugins > Add New, search for Calendar+, and click Install
-- Activate the plugin
+* Go to Plugins > Add New, search for Calendar+, and click Install
+* Activate the plugin
 
 Manual Installation:
-- Download the plugin ZIP file
-- Go to Plugins > Add New > Upload Plugin, select the ZIP file, and click Install Now
-- Activate the plugin
+* Download the plugin ZIP file
+* Go to Plugins > Add New > Upload Plugin, select the ZIP file, and click Install Now
+* Activate the plugin
 
 That’s it! Just configure your settings as you see fit, and you’re on your way to creating events in style.
 
@@ -188,129 +186,141 @@ Remember to always make a backup of your database and files before updating!
 
 == Changelog ==
 
+= [1.0.14] 2026-09-11 =
+
+**Added**
+* Load polyfills on WordPress versions below 6.8
+
+**Fixed**
+* Include events whose start falls within the queried date range
+* Fix Calendar Plus API pagination dropping the last page
+* Fix disabling datetime and ticket deletion when they are a linked item and the last one
+* Fix Calendar+ event timezone conversions
+
+**Changed**
+* Debounce applying filters while the user is typing
+* Add category text color support
+
 = [1.0.13] 2026-01-20 =
-#### Fixed
- - Removed duplicate assets
+
+* Maintenance release
 
 = [1.0.12] 2026-01-16 =
-#### Fixed
- - [Removed Eventespresso i18n Dependencies (#2075)]
-
+**Fixed**
+* [Removed Eventespresso i18n Dependencies (#2075)]
 
 = [1.0.11] 2026-01-14 =
-#### Added
- - [Add support for Events Calendar Plus Anywhere (#2070)]
+**Added**
+* [Add support for Events Calendar Plus Anywhere (#2070)]
 
-#### Fixed
- - [Fix events not showing on end of month (#2068)]
- - [Added inputs For editing filter labels applied to Calendar+ filters (Barista#1469) (#2071)]
-
+**Fixed**
+* [Fix events not showing on end of month (#2068)]
+* [Added inputs For editing filter labels applied to Calendar+ filters (Barista#1469) (#2071)]
 
 = [1.0.10] 2025-10-07 =
 
-#### Changed
- - [Missing file fix]
-
+**Changed**
+* [Missing file fix]
 
 = [1.0.9] 2025-10-07 =
 
-#### Changed
- - [Fixed Z Index Issue Of Popover For Horizontal Filters (Barista#1439) (#1969)]
- - [New Events Calendar Plus Shortcodes plugin (#1752)]
- - [Filter Customization and Shortcodes (Barista#1381) (#1981)]
- - [Remove Duplicate Events (Barista#1451) (#1996)]
+**Changed**
+* [Fixed Z Index Issue Of Popover For Horizontal Filters (Barista#1439) (#1969)]
+* [New Events Calendar Plus Shortcodes plugin (#1752)]
+* [Filter Customization and Shortcodes (Barista#1381) (#1981)]
+* [Remove Duplicate Events (Barista#1451) (#1996)]
 
 = [1.0.8] 2025-08-22 =
 
-#### Fixed
-- [Fixed Incorrect Import of i18n Utility from EE Core (Barista#1438) (#1953)]
+**Fixed**
+* [Fixed Incorrect Import of i18n Utility from EE Core (Barista#1438) (#1953)]
 
 = [1.0.7] 2025-08-21 =
 
-#### Changed
- - [Fixed Empty Placeholder Showing On Detail Modals When No Tags Or Categories Are There (Barista#1431) (#1949)]
- - [Removed Events Calendar Plus Address 2 Duplications (#1948)]
- - [Fixed Get Direction From Complete Address Details (Barista#1436) (#1950)]
- - [Add Setting for Category Text Color (Barista#1432) (#1951)]
+**Changed**
+* [Fixed Empty Placeholder Showing On Detail Modals When No Tags Or Categories Are There (Barista#1431) (#1949)]
+* [Removed Events Calendar Plus Address 2 Duplications (#1948)]
+* [Fixed Get Direction From Complete Address Details (Barista#1436) (#1950)]
+* [Add Setting for Category Text Color (Barista#1432) (#1951)]
 
 = [1.0.6] 2025-07-25 =
 
-#### Fixed
- - [Fix Events CalendarPlus API URL on Multi-Site (#1934)]
- - [Fix Events CalendarPlus API URL on Multi-Site (Barista#1430) (#1935)]
+**Fixed**
+* [Fix Events CalendarPlus API URL on Multi-Site (#1934)]
+* [Fix Events CalendarPlus API URL on Multi-Site (Barista#1430) (#1935)]
 
 = [1.0.5] 2025-07-22 =
 
-#### Fixed
- - [Fix WP readme.txt file]
+**Fixed**
+* [Fix WP readme.txt file]
 
 = [1.0.4] 2025-06-18 =
 
-#### Added
- - [Add Calendar Plus Version String to DOM and API Responses (#1896)]
- - [Add Calendar Plus Support Admin Page (#1898)]
+**Added**
+* [Add Calendar Plus Version String to DOM and API Responses (#1896)]
+* [Add Calendar Plus Support Admin Page (#1898)]
 
-#### Fixed
- - [Prevent Migrations From Running on New Calendar Plus Activations (#1905)]
+**Fixed**
+* [Prevent Migrations From Running on New Calendar Plus Activations (#1905)]
 
-#### Changed
- - [Fix - All Filters Checkbox Filtering Issue (Barista#1417) (#1890)]
- - [Refactor Events Calendar Plus Data Loading and Add Data Migration Management (#1881)]
- - [CalendarPlus Data fetching with api (Barista#1410) (#1902)]
- - [Fix/Calendar Plus Crash (Barista#1425) (#1903)]
- - [Add entity caches to ee event adapter (#1868)]
+**Changed**
+* [Fix - All Filters Checkbox Filtering Issue (Barista#1417) (#1890)]
+* [Refactor Events Calendar Plus Data Loading and Add Data Migration Management (#1881)]
+* [CalendarPlus Data fetching with api (Barista#1410) (#1902)]
+* [Fix/Calendar Plus Crash (Barista#1425) (#1903)]
+* [Add entity caches to ee event adapter (#1868)]
 
 = [1.0.3] 2025-05-06 =
 
-#### Added
- - [Implemented Settings for Week Start Day Selection (Barista#1401) (#1835)]
- - [Add Query Params Support (Barista#1402)](https://github.com/eventespresso/barista/pull/1402)
+**Added**
+* [Implemented Settings for Week Start Day Selection (Barista#1401) (#1835)]
+* [Add Query Params Support (Barista#1402)](https://github.com/eventespresso/barista/pull/1402)
 
-#### Fixed
- - [Add entity caching and only query events from the previous month onwards  within Calendar Plus (#1871)]
- - [Fix Events Calendar Plus Asset Loading from Barista (#1852)]
+**Fixed**
+* [Add entity caching and only query events from the previous month onwards  within Calendar Plus (#1871)]
+* [Fix Events Calendar Plus Asset Loading from Barista (#1852)]
 
-#### Changed
- - [Refactored Filters Logic into Predicates (Barista#1404) (#1839)]
- - [Fixed Styles to Calendar-Domain Specific (Barista#1405) (#1847)]
- - [Rename Version Files and Fallback to Main File for Version (#1880)]
- - [Seperated i18n Utility Logic for Calendar Domains (Barista#1403) (#1884)]
+**Changed**
+* [Refactored Filters Logic into Predicates (Barista#1404) (#1839)]
+* [Fixed Styles to Calendar-Domain Specific (Barista#1405) (#1847)]
+* [Rename Version Files and Fallback to Main File for Version (#1880)]
+* [Seperated i18n Utility Logic for Calendar Domains (Barista#1403) (#1884)]
 
 = [1.0.2] 2025-04-23 =
 
-#### Fixed
- - [Allow eslint rule jsx no new object as prop (Barista#1384) (#1814)]
- - [Fix/cp/default settings migration (#1816)]
- - [Events Calendar Plus: Dont load Draft Events (#1817)]
+**Fixed**
+* [Allow eslint rule jsx no new object as prop (Barista#1384) (#1814)]
+* [Fix/cp/default settings migration (#1816)]
+* [Events Calendar Plus: Dont load Draft Events (#1817)]
 
-#### Changed
- - [Fix/line clamp issue on safari (Barista#1395) (#1820)]
- - [fixed list style of agenda view to none (Barista#1391) (#1821)]
- - [fixed placeholder issue in edtr and p tag issue (Barista#1387) (#1822)]
- - [fixed events category color crash (Barista#1398) (#1826)]
- - [Fix Collapse Filters on Narrow Screens (Barista#1392) (#1828)]
- - [Added Admin Setting to Show Filters on Top Instead of Sidebar (Barista#1396) (#1829)]
+**Changed**
+* [Fix/line clamp issue on safari (Barista#1395) (#1820)]
+* [fixed list style of agenda view to none (Barista#1391) (#1821)]
+* [fixed placeholder issue in edtr and p tag issue (Barista#1387) (#1822)]
+* [fixed events category color crash (Barista#1398) (#1826)]
+* [Fix Collapse Filters on Narrow Screens (Barista#1392) (#1828)]
+* [Added Admin Setting to Show Filters on Top Instead of Sidebar (Barista#1396) (#1829)]
 
 = [1.0.1] 2025-04-23 =
 
-#### Added
- - [Calendar Plus Event Custom Post Type (#1732)]
- - [Add Default Dark Mode Colors (Barista#1380) (#1803)]
+**Added**
+* [Calendar Plus Event Custom Post Type (#1732)]
+* [Add Default Dark Mode Colors (Barista#1380) (#1803)]
 
-#### Fixed
- - [Calendar Plus WordPress Fixes (#1775)]
- - [More Calendar Plus WordPress Fixes (#1780)]
- - [Fixed Backspace in Date Input Crashes Calendar (Barista#1367) #1792]
- - [Fixed eventCategoryColors When Settings Are Not Saved (Barista#1375) (#1793)]
- - [Fixed Dark Mode Upcoming Calendar Dates Missing (Barista#1376) (#1794)]
- - [Fix Dark Mode Filters (Barista#1377) (#1795)]
- - [Fix Styling Issues (Barista#1383) (#1804)]
- - [Fix/allow eslint rule jsx no new object as prop (Barista#1384) (#1814)]
+**Fixed**
+* [Calendar Plus WordPress Fixes (#1775)]
+* [More Calendar Plus WordPress Fixes (#1780)]
+* [Fixed Backspace in Date Input Crashes Calendar (Barista#1367) #1792]
+* [Fixed eventCategoryColors When Settings Are Not Saved (Barista#1375) (#1793)]
+* [Fixed Dark Mode Upcoming Calendar Dates Missing (Barista#1376) (#1794)]
+* [Fix Dark Mode Filters (Barista#1377) (#1795)]
+* [Fix Styling Issues (Barista#1383) (#1804)]
+* [Fix/allow eslint rule jsx no new object as prop (Barista#1384) (#1814)]
 
-#### Changed
- - [Refactor Calendar+ Asset Loading (#1729)]
- - [Rename Plugin to Events Calendar Plus (#1751)]
- - [added datetime id to querystring for event espresso events adapter (#1766)]
- - [Mod/Add or Update readme Files (#1748)]
+**Changed**
+* [Refactor Calendar+ Asset Loading (#1729)]
+* [Rename Plugin to Events Calendar Plus (#1751)]
+* [added datetime id to querystring for event espresso events adapter (#1766)]
+* [Mod/Add or Update readme Files (#1748)]
 
-### For all versions, please see the full [changelog](https://github.com/eventespresso/events-calendar-plus/blob/MAIN/CHANGELOG.md) in our documentation
+For all versions, please see the full [changelog](https://github.com/eventespresso/events-calendar-plus/blob/MAIN/CHANGELOG.md) in our documentation

@@ -3,6 +3,7 @@
 namespace EventEspresso\CalendarPlus\frontend\adaptors;
 
 use EventEspresso\CalendarPlus\api\DateRange;
+use EventEspresso\CalendarPlus\api\DateTimeHelper;
 use EventEspresso\CalendarPlus\CalendarPlusPostMeta;
 use EventEspresso\CalendarPlus\CalendarPlusPostType;
 use EventEspresso\CalendarPlus\frontend\models\CalendarEvent;
@@ -139,6 +140,11 @@ class CalendarPlusEvent extends EventAdaptor
             if (! $start_datetime || ! $end_datetime) {
                 return null;
             }
+
+            // Convert UTC datetimes (as stored in DB) to site timezone before passing to CalendarEvent.
+            $start_datetime = DateTimeHelper::setTimezoneToSiteTimezone($start_datetime);
+            $end_datetime   = DateTimeHelper::setTimezoneToSiteTimezone($end_datetime);
+
             $categories       = $this->getEventCategories($post_ID);
             $primary_category = ! empty($categories) ? $categories[0] : '';
 
@@ -207,14 +213,8 @@ class CalendarPlusEvent extends EventAdaptor
         return [
             [
                 'key'     => 'calendar_event_start_datetime',
-                'value'   => $date_range->startString(),
-                'compare' => '>=',
-                'type'    => 'DATETIME',
-            ],
-            [
-                'key'     => 'calendar_event_end_datetime',
-                'value'   => $date_range->endString(),
-                'compare' => '<=',
+                'value'   => [$date_range->startString(), $date_range->endString()],
+                'compare' => 'BETWEEN',
                 'type'    => 'DATETIME',
             ],
         ];

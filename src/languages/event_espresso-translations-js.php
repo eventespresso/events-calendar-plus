@@ -290,10 +290,10 @@ $generated_i18n_strings = array(
 	// Reference: domains/calendarPlus/admin/src/lib/constants.ts:98
 	__( 'Filters', 'event_espresso' ),
 
-	// Reference: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/CardsGridSection.tsx:121
+	// Reference: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/CardsGridSection.tsx:122
 	__( 'Not Specified. For more details, please contact the organizer.', 'event_espresso' ),
 
-	// Reference: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/CardsGridSection.tsx:130
+	// Reference: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/CardsGridSection.tsx:131
 	// Reference: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/GetDirection.tsx:42
 	__( 'Get Directions', 'event_espresso' ),
 
@@ -339,7 +339,7 @@ $generated_i18n_strings = array(
 	// Reference: domains/calendarPlus/frontend/src/components/calendar/toolbar/filters/RenderFilters.tsx:128
 	__( 'Reset', 'event_espresso' ),
 
-	// Reference: domains/calendarPlus/frontend/src/components/calendar/toolbar/filters/SearchFilter.tsx:55
+	// Reference: domains/calendarPlus/frontend/src/components/calendar/toolbar/filters/SearchFilter.tsx:56
 	__( 'Search events', 'event_espresso' )
 );
 /* THIS IS THE END OF THE GENERATED FILE */

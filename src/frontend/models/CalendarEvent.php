@@ -9,6 +9,21 @@ use EventEspresso\CalendarPlus\api\DateTimeHelper;
 /**
  * CalendarEvent - DTO for calendar event data
  *
+ * ╔════════════════════════════════════════════════════════════════════════════╗
+ * ║ ██ ███    ███ ██████   ██████  ██████  ████████  █████  ███    ██ ████████ ║
+ * ║ ██ ████  ████ ██   ██ ██    ██ ██   ██    ██    ██   ██ ████   ██    ██    ║
+ * ║ ██ ██ ████ ██ ██████  ██    ██ ██████     ██    ███████ ██ ██  ██    ██    ║
+ * ║ ██ ██  ██  ██ ██      ██    ██ ██   ██    ██    ██   ██ ██  ██ ██    ██    ║
+ * ║ ██ ██      ██ ██       ██████  ██   ██    ██    ██   ██ ██   ████    ██    ║
+ * ╠════════════════════════════════════════════════════════════════════════════╣
+ * ║      All DateTime values passed to this class MUST already be in the       ║
+ * ║                           site's local timezone.                           ║
+ * ║                                                                            ║
+ * ║  Timezone conversion (UTC → site TZ) is the responsibility of each         ║
+ * ║  adapter (CalendarPlusEvent, EventEspressoEvent, etc.) before              ║
+ * ║  constructing a CalendarEvent instance.                                    ║
+ * ╚════════════════════════════════════════════════════════════════════════════╝
+ *
  * @package     Event Espresso
  * @subpackage  EventEspresso\CalendarPlus
  * @author      Brent Christensen
@@ -94,20 +109,15 @@ class CalendarEvent
 
     private function getStartDate(): string
     {
-        // Convert UTC times to site timezone
-        $start_local = DateTimeHelper::convertUtcToSiteTimezone($this->start);
-        return DateTimeHelper::formatDateAndTimeForAPI($start_local);
+        return DateTimeHelper::formatDateAndTimeForAPI($this->start);
     }
 
 
     private function getEndDate(): string
     {
-        if ($this->end) {
-            // Convert UTC times to site timezone
-            $end_local = DateTimeHelper::convertUtcToSiteTimezone($this->end);
-            return DateTimeHelper::formatDateAndTimeForAPI($end_local);
-        }
-        return '';
+        return $this->end
+            ? DateTimeHelper::formatDateAndTimeForAPI($this->end)
+            : '';
     }
 
 

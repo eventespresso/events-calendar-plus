@@ -115,10 +115,16 @@ class DateTimeHelper
         $datetime_or_string,
         string $datetime_format = ''
     ): ?DateTimeInterface {
-        $datetime = DateTimeHelper::ensureIsDatetime($datetime_or_string, $datetime_format);
+        $datetime = DateTimeHelper::ensureIsDatetime(
+            $datetime_or_string,
+            $datetime_format,
+            DateTimeHelper::siteTimezone()
+        );
+
         if (DateTimeHelper::timeZoneIsUTC($datetime)) {
             return $datetime;
         }
+
         return DateTimeHelper::setTimezoneToUtc($datetime);
     }
 
@@ -132,7 +138,21 @@ class DateTimeHelper
         $datetime_or_string,
         string $datetime_format = ''
     ): ?DateTimeInterface {
-        $datetime = DateTimeHelper::ensureIsDatetime($datetime_or_string, $datetime_format);
+
+        if (empty($datetime_or_string)) {
+            return null;
+        }
+
+        $datetime = DateTimeHelper::ensureIsDatetime(
+            $datetime_or_string,
+            $datetime_format,
+            DateTimeHelper::utcTimezone()
+        );
+
+        if (! $datetime instanceof DateTimeInterface) {
+            return null;
+        }
+
         if (DateTimeHelper::timeZoneIsSiteTimezone($datetime)) {
             return $datetime;
         }
@@ -146,13 +166,16 @@ class DateTimeHelper
     }
 
 
-    private static function ensureIsDatetime($datetime_or_string, string $datetime_format = ''): ?DateTimeInterface
-    {
+    private static function ensureIsDatetime(
+        $datetime_or_string,
+        string $datetime_format = '',
+        ?DateTimeZone $timezone = null
+    ): ?DateTimeInterface {
         if ($datetime_or_string instanceof DateTimeInterface) {
             return $datetime_or_string;
         }
         if (is_string($datetime_or_string)) {
-            return DateTimeHelper::convertStringToDateTime($datetime_or_string, $datetime_format);
+            return DateTimeHelper::convertStringToDateTime($datetime_or_string, $datetime_format, $timezone);
         }
         throw new RuntimeException(
             esc_html(

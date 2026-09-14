@@ -3,7 +3,7 @@
  * Plugin Name: Events Calendar Plus
  * Plugin URI:  https://www.eventespresso.com
  * Description: Events Calendar Plus (Calendar+) is the Universal Events Calendar for WordPress - display ALL the events!
- * Version:     1.0.13
+ * Version:     1.0.14
  * Author:      Event Espresso
  * Author URI:  https://www.eventespresso.com/
  * License:     GPLv3
@@ -38,16 +38,27 @@ const EVENTS_CALENDAR_PLUS_SLUG = 'events-calendar-plus';
 /**
  * The current version of the plugin. Uses semantic versioning.
  */
-const EVENTS_CALENDAR_PLUS_VERSION = '1.0.13';
+const EVENTS_CALENDAR_PLUS_VERSION = '1.0.14';
 
 const EVENTS_CALENDAR_PLUS_MIN_PHP_VERSION = '7.4';
 
-if (version_compare(PHP_VERSION, EVENTS_CALENDAR_PLUS_MIN_PHP_VERSION, '>=')) {
-    // composer autoloader
-    require __DIR__ . '/vendor/autoload.php';
+const EVENTS_CALENDAR_PLUS_MIN_WP_VERSION = '6.8';
 
+if (version_compare(PHP_VERSION, EVENTS_CALENDAR_PLUS_MIN_PHP_VERSION, '>=')) {
     define('EVENTS_CALENDAR_PLUS_BASE_PATH', plugin_dir_path(__FILE__));
     define('EVENTS_CALENDAR_PLUS_BASE_URL', plugin_dir_url(__FILE__));
+
+    // composer autoloader
+    require __DIR__ . '/vendor/autoload.php';
+    require __DIR__ . '/src/bootstrap.php';
+
+    global $wp_version;
+    if (version_compare($wp_version, EVENTS_CALENDAR_PLUS_MIN_WP_VERSION, '<')) {
+        // load polyfills
+        require __DIR__ . '/src/tools/compatibility.php';
+    }
+
+    add_action('init', 'loadEventsCalendarPlus', 1);
 
     register_activation_hook(
         __FILE__,
@@ -58,29 +69,6 @@ if (version_compare(PHP_VERSION, EVENTS_CALENDAR_PLUS_MIN_PHP_VERSION, '>=')) {
         __FILE__,
         ['EventEspresso\CalendarPlus\PluginActivation', 'deactivate']
     );
-
-    $calendar_plus = new EventEspresso\CalendarPlus\CalendarPlus(
-        new EventEspresso\CalendarPlus\tools\Request(),
-        EVENTS_CALENDAR_PLUS_SLUG,
-        EVENTS_CALENDAR_PLUS_VERSION
-    );
-    $calendar_plus->registerHooks();
 } else {
-    add_action(
-        'admin_notices',
-        function () {
-            echo '
-            <div class="error">
-                <p>
-                    ' .  sprintf(
-                            esc_html__(
-                                'Events Calendar Plus requires at least PHP version %s or higher.',
-                                'events-calendar-plus'
-                            ),
-                            EVENTS_CALENDAR_PLUS_MIN_PHP_VERSION
-                    ) . '
-                </p>
-            </div>';
-        }
-    );
+    add_action('admin_notices', 'eventsCalendarPlusMinPhpError');
 }

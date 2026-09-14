@@ -16,7 +16,7 @@ class DatabaseSchema
     /**
      * the "target" post migration db schema version that the database should be at
      */
-    public const POST_MIGRATION_DB_VERSION = 2;
+    public const POST_MIGRATION_DB_VERSION = 3;
 
     /**
      * name of the WP option used to store db version

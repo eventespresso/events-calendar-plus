@@ -28,7 +28,8 @@ class QueryResponse
     private EventAdaptor $source;
 
     /**
-     * total number of results retrieved for the CURRENT request
+     * number of CalendarEvents generated for the CURRENT request.
+     * not the same unit as $offset and $total: one source result can expand into several.
      *
      * @var int
      */
@@ -80,10 +81,8 @@ class QueryResponse
         foreach ($events as $event) {
             if ($event instanceof CalendarEvent) {
                 $this->events[] = $event;
+                $this->count++;
             }
-            // increment the event count regardless of whether the event was a valid CalendarEvent
-            // else the offset pagination may not work properly
-            $this->count++;
         }
         // also count ALL available events meeting the query criteria
         $this->total = $this->source->totalEventCount($date_range);
@@ -98,11 +97,11 @@ class QueryResponse
 
     public function processResponse(): array
     {
-        // if the count of events retrieved so far (this query plus offset) is less than total events
-        if (($this->count() + $this->offset) < $this->total) {
+        // must not use count() here: $offset and $total are source results, count() is expanded events
+        $next_offset = $this->offset + $this->source->queryLimit();
+        if ($next_offset < $this->total) {
             $this->hasMore = true;
-            // new offset equals the current offset plus the query limit
-            $this->offset += $this->source->queryLimit();
+            $this->offset  = $next_offset;
         } else {
             // all done
             $this->offset = $this->total;

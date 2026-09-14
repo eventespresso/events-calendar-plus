@@ -1,0 +1,470 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:104
+msgid "Keep sidebar filters visible on Web"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:113
+msgid "Show filters on top bar"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:116
+msgid ""
+"When enabled, filters will appear below the calendar toolbar, and the "
+"sidebar will be hidden."
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:127
+msgid "Enable thumbnail/featured image in calendar view"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:130
+msgid ""
+"If enabled, the thumbnail/featured image will be displayed on the events in "
+"calendar views."
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:137
+msgid "Show Event Tooltip/Popover"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:140
+msgid ""
+"If enabled, hovering over an event will not display the tooltip/popover. "
+"You can view the event details by clicking on the event instead."
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:146
+msgid "Customize filters"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:39
+msgid "Enable Search Option"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:40
+msgid "Enable Location Filter"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:41
+msgid "Enable Venue Filter"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:42
+msgid "Enable Category Filter"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:43
+msgid "Enable Tag Filter"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:49
+#: domains/calendarPlus/admin/src/components/settings/CalendarSettings.tsx:39
+msgid "Calendar Views"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:57
+#: domains/calendarPlus/admin/src/lib/constants.ts:4
+msgid "Month View"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:60
+#: domains/calendarPlus/admin/src/lib/constants.ts:5
+msgid "Week View"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:63
+#: domains/calendarPlus/admin/src/lib/constants.ts:6
+msgid "Day View"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:66
+#: domains/calendarPlus/admin/src/lib/constants.ts:7
+msgid "Agenda View"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:69
+msgid "Default View"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:74
+msgid "Select default view"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:84
+msgid "Start of week"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/BasicSettings.tsx:89
+msgid "Select start day of week"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/CalendarSettings.tsx:43
+#: domains/calendarPlus/admin/src/components/settings/FormattingSettings.tsx:24
+msgid "Text Labels"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/CalendarSettings.tsx:47
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:44
+msgid "Date Formats"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/CalendarSettings.tsx:51
+msgid "Colors & Styles"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/CalendarSettings.tsx:95
+msgid "Saving…"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/CalendarSettings.tsx:95
+msgid "Save Settings"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:101
+msgid "MM/dd"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:111
+msgid "Custom format (e.g., dd MMMM)"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:121
+msgid "Time Format"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:124
+msgid "24-hour ( HH:mm )"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:125
+msgid "12-hour ( hh:mm a )"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:126
+msgid "Custom"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:46
+msgid "For creating custom formats check the following:"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:48
+msgid "Format Instructions"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:52
+msgid "Date Format"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:56
+msgid "yyyy-MM-dd"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:59
+msgid "MM/dd/yyyy"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:62
+msgid "dd-MM-yyyy"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:65
+msgid "dd/MM/yyyy"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:68
+msgid "dd.MM.yyyy"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:88
+msgid "Month Format"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:92
+msgid "MMMM dd"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:95
+msgid "dd MMMM"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/DateSettings.tsx:98
+msgid "MMM dd"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/useCalendarSettings.ts:168
+msgid "Invalid format"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/useCalendarSettings.ts:199
+msgid "Please correct the format errors before saving."
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/useCalendarSettings.ts:210
+msgid "Settings saved."
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/useCalendarSettings.ts:211
+msgid "Calendar+ settings are saved."
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/useCalendarSettings.ts:214
+msgid "Unknown error"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/useCalendarSettings.ts:219
+msgid "Error"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/useCalendarSettings.ts:38
+msgid "Error loading settings"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/useCalendarSettings.ts:39
+msgid "An error occurred while fetching settings."
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/useCalendarSettings.ts:72
+msgid ""
+"Light mode calendar background color does not meet contrast requirements "
+"with text color."
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/useCalendarSettings.ts:75
+msgid ""
+"Light mode calendar toolbar background color does not meet contrast "
+"requirements with text color."
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/useCalendarSettings.ts:83
+msgid ""
+"Dark mode calendar background color does not meet contrast requirements "
+"with text color."
+msgstr ""
+
+#: domains/calendarPlus/admin/src/components/settings/useCalendarSettings.ts:86
+msgid ""
+"Dark mode calendar toolbar background color does not meet contrast "
+"requirements with text color."
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:101
+msgid "Filters Background Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:104
+msgid "Filters Text Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:12
+msgid "Back Button Label"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:13
+msgid "Next Button Label"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:14
+msgid "Today Button Label"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:15
+msgid "Month Button Label"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:16
+msgid "Week Button Label"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:17
+msgid "Day Button Label"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:18
+msgid "Agenda Button Label"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:21
+msgid "Time Label"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:22
+msgid "Location Label"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:23
+msgid "Event Detail Label"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:24
+msgid "Show More Label"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:25
+msgid "Register Event Button Label"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:28
+msgid "Category Label"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:29
+msgid "Venue Label"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:30
+msgid "Tag Label"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:35
+msgid "Calendar"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:38
+msgid "Calendar Background Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:41
+msgid "Calendar Text Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:44
+msgid "Calendar Toolbar Background Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:49
+msgid "Today Cell Background Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:54
+msgid "Selected Cell Background Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:59
+msgid "Placeholder/Off Range Cell Background Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:64
+msgid "Calendar Borders Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:69
+msgid "Calendar Buttons Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:72
+msgid "Event"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:73
+msgid "Event Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:74
+msgid "Event Text Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:75
+msgid "Event Tooltip/Popover"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:76
+msgid "Event Tooltip Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:79
+msgid "Event Tooltip Text Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:82
+msgid "Event Detail Modal"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:85
+msgid "Event Modal Banner Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:90
+msgid "Event Modal Background Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:95
+msgid "Event Modal Cards Color"
+msgstr ""
+
+#: domains/calendarPlus/admin/src/lib/constants.ts:98
+msgid "Filters"
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/CardsGridSection.tsx:121
+msgid "Not Specified. For more details, please contact the organizer."
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/CardsGridSection.tsx:130
+#: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/GetDirection.tsx:42
+msgid "Get Directions"
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/CardsGridSection.tsx:54
+msgid "Unable to get your location. Please enable GPS and try again."
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/CardsGridSection.tsx:62
+msgid "Geolocation is not supported by your browser."
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/GetDirection.tsx:51
+msgid "Type your address to get directions"
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/toolbar/DateInputField.tsx:79
+msgid "Select Date"
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/toolbar/filters/FilterComponent.tsx:132
+msgid "All"
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/toolbar/filters/HorizontalFIlters/RenderHorizontalFilters.tsx:61
+msgid "Country"
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/toolbar/filters/HorizontalFIlters/RenderHorizontalFilters.tsx:69
+msgid "State"
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/toolbar/filters/HorizontalFIlters/RenderHorizontalFilters.tsx:78
+msgid "City"
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/toolbar/filters/LocationFilters.tsx:37
+msgid "Location"
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/toolbar/filters/LocationFilters.tsx:41
+msgid "Select Country"
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/toolbar/filters/LocationFilters.tsx:50
+msgid "Select State"
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/toolbar/filters/LocationFilters.tsx:60
+msgid "Select City"
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/toolbar/filters/RenderFilters.tsx:117
+msgid "Apply Filters"
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/toolbar/filters/RenderFilters.tsx:128
+msgid "Reset"
+msgstr ""
+
+#: domains/calendarPlus/frontend/src/components/calendar/toolbar/filters/SearchFilter.tsx:56
+msgid "Search events"
+msgstr ""

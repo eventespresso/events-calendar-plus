@@ -6,20 +6,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Releases
 
-### 1.0.13
+### 1.0.14
+
+#### Added
+ - [Load Polyfills If WP Version Is Less Than 6.8 (#2097)](https://github.com/eventespresso/cafe/pull/2097)
+
+#### Fixed
+ - [Include Events Whose Start Falls Within The Queried Date Range (#2186)](https://github.com/eventespresso/cafe/pull/2186)
+ - [Fix: Calendar Plus API pagination silently drops the last page (#2261)](https://github.com/eventespresso/cafe/pull/2261)
+ - [Fixed Disabling Datetimes/Tickets Deletions if They Are Linked Item and Last One (Barista#1488) (#2276)](https://github.com/eventespresso/cafe/pull/2276)
+ - [Fixed Calendar+ Events Timezone Conversions. (#2089)](https://github.com/eventespresso/cafe/pull/2089)
 
 #### Changed
- - Removed duplicate assets
+ - [SaaS. Add mods for Events Calendar Plus (#2104)](https://github.com/eventespresso/cafe/pull/2104)
+ - [Added Debounced Filters Apply while User Type (Barista#1487) (#2275)](https://github.com/eventespresso/cafe/pull/2275)
+ - [Calendar Plus Category Text Color (Barista#1503) (#2277)](https://github.com/eventespresso/cafe/pull/2277)
+ - [Bump DDEV to v1-24-10 (#1484) + Claude Docs (#1493) + Extract Eslint Rules (#1501) (Barista#1514) (#2283)](https://github.com/eventespresso/cafe/pull/2283)
+ - [Fixed Events Timezone to Match Website Timezone in Calendar (Barista#1522) (#2285)](https://github.com/eventespresso/cafe/pull/2285)
 
-### 1.0.12
+
+
+
+
+### [1.0.13]
+ - no changes - version bump due to internal system updates
+
+
+### [1.0.12]
 
 #### Changed
  - [Removed Eventespresso i18n Dependencies From Calendar+ (Barista#1479) (#2075)](https://github.com/eventespresso/cafe/pull/2075)
 
-### [1.0.12]
-
-#### Fixed
- - [Removed Eventespresso i18n Dependencies (#2075)](https://github.com/eventespresso/cafe/pull/2075)
 
 ### [1.0.11]
 #### Added
@@ -29,9 +46,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - [Fix events not showing on end of month (#2068)](https://github.com/eventespresso/cafe/pull/2068)
  - [Added inputs For editing filter labels applied to Calendar+ filters (Barista#1469) (#2071)](https://github.com/eventespresso/cafe/pull/2071)
 
+
 ### [1.0.10]
 #### Fixed
  - [Missing file fix]
+
 
 ### [1.0.9]
 #### Fixed
@@ -41,11 +60,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - [Remove Duplicate Events (Barista#1451) (#1996)](https://github.com/eventespresso/cafe/pull/1996)
 
 
-
 ### [1.0.8]
 #### Fixed
 - [Fixed Incorrect Import of i18n Utility from EE Core (Barista#1438) (#1953)](https://github.com/eventespresso/cafe/pull/1953)
-
 
 
 ### [1.0.7]
@@ -58,18 +75,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - [Fixed Incorrect Import of i18n Utility from EE Core (Barista#1438) (#1953)](https://github.com/eventespresso/cafe/pull/1953)
 
 
-
 ### [1.0.6]
 #### Fixed
  - [Fix Events CalendarPlus API URL on Multi-Site (#1934)](https://github.com/eventespresso/cafe/pull/1934)
  - [Fix Events CalendarPlus API URL on Multi-Site (Barista#1430) (#1935)](https://github.com/eventespresso/cafe/pull/1935)
 
 
-
 ### [1.0.5]
 #### Fixed
  - [Fix WP readme.txt file]
-
 
 
 ### [1.0.4]
@@ -88,7 +102,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - [Add entity caches to ee event adapter (#1868)](https://github.com/eventespresso/cafe/pull/1868)
 
 
-
 ### [1.0.3]
 #### Added
  - [Implemented Settings for Week Start Day Selection (Barista#1401) (#1835)](https://github.com/eventespresso/cafe/pull/1835)
@@ -105,7 +118,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - [Seperated i18n Utility Logic for Calendar Domains (Barista#1403) (#1884)](https://github.com/eventespresso/cafe/pull/1884)
 
 
-
 ### [1.0.2]
 #### Fixed
  - [Allow eslint rule jsx no new object as prop (Barista#1384) (#1814)](https://github.com/eventespresso/cafe/pull/1814)
@@ -119,7 +131,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - [fixed events category color crash (Barista#1398) (#1826)](https://github.com/eventespresso/cafe/pull/1826)
  - [Fix Collapse Filters on Narrow Screens (Barista#1392) (#1828)](https://github.com/eventespresso/cafe/pull/1828)
  - [Added Admin Setting to Show Filters on Top Instead of Sidebar (Barista#1396) (#1829)](https://github.com/eventespresso/cafe/pull/1829)
-
 
 
 ### [1.0.1]

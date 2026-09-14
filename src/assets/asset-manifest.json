@@ -1,28 +1,28 @@
 {
   "files": {
     "calendarPlus.css": "/static/css/calendarPlus.5e9a1cda.css",
-    "calendarPlus.js": "/static/js/calendarPlus.4a3a6d7a.js",
-    "calendarPlus.js.map": "/static/js/calendarPlus.4a3a6d7a.js.map",
-    "calendarPlus.php": "/static/js/calendarPlus.42a1ac4f.asset.php",
+    "calendarPlus.js": "/static/js/calendarPlus.82700905.js",
+    "calendarPlus.js.map": "/static/js/calendarPlus.82700905.js.map",
+    "calendarPlus.php": "/static/js/calendarPlus.a7e767ab.asset.php",
     "calendarPlusAdmin.css": "/static/css/calendarPlusAdmin.15bf528b.css",
-    "calendarPlusAdmin.js": "/static/js/calendarPlusAdmin.06b87999.js",
-    "calendarPlusAdmin.js.map": "/static/js/calendarPlusAdmin.06b87999.js.map",
-    "calendarPlusAdmin.php": "/static/js/calendarPlusAdmin.84b59c35.asset.php",
+    "calendarPlusAdmin.js": "/static/js/calendarPlusAdmin.f5ae1d9b.js",
+    "calendarPlusAdmin.js.map": "/static/js/calendarPlusAdmin.f5ae1d9b.js.map",
+    "calendarPlusAdmin.php": "/static/js/calendarPlusAdmin.cb6d0b6c.asset.php",
     "static/css/calendarPlus.5e9a1cda.css.map": "/static/css/calendarPlus.5e9a1cda.css.map",
     "static/css/calendarPlusAdmin.15bf528b.css.map": "/static/css/calendarPlusAdmin.15bf528b.css.map",
-    "static/js/calendarPlus.4a3a6d7a.js.LICENSE.txt": "/static/js/calendarPlus.4a3a6d7a.js.LICENSE.txt",
-    "static/js/calendarPlusAdmin.06b87999.js.LICENSE.txt": "/static/js/calendarPlusAdmin.06b87999.js.LICENSE.txt"
+    "static/js/calendarPlus.82700905.js.LICENSE.txt": "/static/js/calendarPlus.82700905.js.LICENSE.txt",
+    "static/js/calendarPlusAdmin.f5ae1d9b.js.LICENSE.txt": "/static/js/calendarPlusAdmin.f5ae1d9b.js.LICENSE.txt"
   },
   "entrypoints": {
     "calendarPlusAdmin": [
       "static/css/calendarPlusAdmin.15bf528b.css",
-      "static/js/calendarPlusAdmin.06b87999.js",
-      "static/js/calendarPlusAdmin.84b59c35.asset.php"
+      "static/js/calendarPlusAdmin.f5ae1d9b.js",
+      "static/js/calendarPlusAdmin.cb6d0b6c.asset.php"
     ],
     "calendarPlus": [
       "static/css/calendarPlus.5e9a1cda.css",
-      "static/js/calendarPlus.4a3a6d7a.js",
-      "static/js/calendarPlus.42a1ac4f.asset.php"
+      "static/js/calendarPlus.82700905.js",
+      "static/js/calendarPlus.a7e767ab.asset.php"
     ]
   }
 }

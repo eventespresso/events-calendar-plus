@@ -4,10 +4,12 @@ namespace EventEspresso\CalendarPlus;
 
 use DateTime;
 use DateTimeImmutable;
-use DateTimeZone;
+use DateTimeInterface;
+use EventEspresso\CalendarPlus\api\Database;
 use EventEspresso\CalendarPlus\api\DateTimeHelper;
 use Throwable;
 use WP_Error;
+use WP_REST_Response;
 
 /**
  * CalendarPlusPostMeta
@@ -39,13 +41,10 @@ class CalendarPlusPostMeta
     public const KEY_VENUE      = 'calendar_event_venue';
 
 
-    private static DateTimeZone $site_timezone;
-
-
     public function registerHooks(): void
     {
-        CalendarPlusPostMeta::$site_timezone = DateTimeHelper::siteTimezone();
         add_action('init', [$this, 'registerPostMeta'], 110);
+        add_filter('rest_prepare_' . CalendarPlusPostType::EVENT, [$this, 'convertDatetimesForEditor']);
     }
 
 
@@ -94,6 +93,33 @@ class CalendarPlusPostMeta
                 error_log($error_message);
             }
         }
+    }
+
+
+    /**
+     * Convert UTC datetimes to site timezone for the block editor
+     */
+    public function convertDatetimesForEditor(WP_REST_Response $response): WP_REST_Response
+    {
+        if (! isset($response->data['meta'])) {
+            return $response;
+        }
+
+        $datetime_fields = [
+            CalendarPlusPostMeta::KEY_START_DATE,
+            CalendarPlusPostMeta::KEY_END_DATE,
+        ];
+
+        foreach ($datetime_fields as $field) {
+            if (isset($response->data['meta'][ $field ]) && ! empty($response->data['meta'][ $field ])) {
+                $datetime = DateTimeHelper::convertUtcToSiteTimezone($response->data['meta'][ $field ], Database::MYSQL_DATETIME_FORMAT);
+                if ($datetime instanceof DateTimeInterface) {
+                    $response->data['meta'][ $field ] = DateTimeHelper::formatDateAndTimeForInput($datetime);
+                }
+            }
+        }
+
+        return $response;
     }
 
 
@@ -168,6 +194,7 @@ class CalendarPlusPostMeta
         }
         // convert the start and end datetimes to UTC any time post meta is saved
         $datetime = DateTimeHelper::convertSiteTimezoneToUTC($datetime);
+
         return DateTimeHelper::formatDateTimeForDatabase($datetime);
     }
 
@@ -196,14 +223,30 @@ class CalendarPlusPostMeta
     }
 
 
+    private static function datetimeValue(int $post_ID, string $post_meta_key): ?DateTime
+    {
+        $datetime_string = CalendarPlusPostMeta::stringValue($post_ID, $post_meta_key);
+        $datetime = DateTimeHelper::convertUtcToSiteTimezone($datetime_string, Database::MYSQL_DATETIME_FORMAT);
+        return $datetime instanceof DateTime ? $datetime : null;
+    }
+
+
     private static function datetimeForCalendarEvent(int $post_ID, string $post_meta_key): ?DateTimeImmutable
     {
-        $datetime = CalendarPlusPostMeta::stringValue($post_ID, $post_meta_key);
+        // Retrieve the raw UTC datetime string directly from the database.
+        // Important: Do NOT convert to the site timezone here.
+        //
+        // Timezone conversion (UTC → site timezone) is handled by the event
+        // adapters, which are responsible for returning localized datetime values.
+        // Keeping the conversion there avoids duplicate timezone adjustments.
+        $datetime_string = CalendarPlusPostMeta::stringValue($post_ID, $post_meta_key);
+
         $datetime = DateTimeHelper::convertStringToDateTime(
-            $datetime,
-            '',
-            CalendarPlusPostMeta::$site_timezone
+            $datetime_string,
+            Database::MYSQL_DATETIME_FORMAT,
+            DateTimeHelper::utcTimezone()
         );
+
         return $datetime instanceof DateTime
             ? DateTimeHelper::convertDatetimeToImmutable($datetime)
             : null;
@@ -212,8 +255,8 @@ class CalendarPlusPostMeta
 
     private static function datetimeForPostContent(int $post_ID, string $post_meta_key): array
     {
-        $datetime = CalendarPlusPostMeta::stringValue($post_ID, $post_meta_key);
-        $datetime = DateTimeHelper::convertStringToDateTime($datetime);
+        $datetime = CalendarPlusPostMeta::datetimeValue($post_ID, $post_meta_key);
+
         return $datetime instanceof DateTime
             ? [
                 DateTimeHelper::formatDateForDisplay($datetime),
@@ -292,10 +335,11 @@ class CalendarPlusPostMeta
 
     public static function isSameDay(int $post_ID): bool
     {
-        $start_datetime = CalendarPlusPostMeta::startDateForCalendarEvent($post_ID);
-        $end_datetime   = CalendarPlusPostMeta::endDateForCalendarEvent($post_ID);
-        return $start_datetime instanceof DateTimeImmutable
-            && $end_datetime instanceof DateTimeImmutable
+        $start_datetime = CalendarPlusPostMeta::datetimeValue($post_ID, CalendarPlusPostMeta::KEY_START_DATE);
+        $end_datetime   = CalendarPlusPostMeta::datetimeValue($post_ID, CalendarPlusPostMeta::KEY_END_DATE);
+
+        return $start_datetime instanceof DateTime
+            && $end_datetime instanceof DateTime
             && DateTimeHelper::datesAreSameDay($start_datetime, $end_datetime);
     }
 

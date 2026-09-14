@@ -67,7 +67,7 @@ class EventEspressoEvent extends EventAdaptor
                 }
                 if (
                     $datetime->start() < $date_range->startTimestamp()
-                    || $datetime->end() > $date_range->endTimestamp()
+                    || $datetime->start() > $date_range->endTimestamp()
                 ) {
                     continue;
                 }
@@ -184,6 +184,11 @@ class EventEspressoEvent extends EventAdaptor
             $event_name       .= $date_name ? " - $date_name" : '';
             $start_date       = DateTimeHelper::convertUnixTimestampToDateTime($datetime->start());
             $end_date         = DateTimeHelper::convertUnixTimestampToDateTime($datetime->end());
+
+            // Convert UTC datetimes (as stored in DB) to site timezone before passing to CalendarEvent.
+            $start_date = DateTimeHelper::setTimezoneToSiteTimezone($start_date);
+            $end_date   = DateTimeHelper::setTimezoneToSiteTimezone($end_date);
+
             $venue            = $this->getVenue($event, $datetime);
             $event_meta       = $this->getEventExtraMeta($event);
             $is_all_day       = $event_meta['all_day'] ?? false;
@@ -268,8 +273,8 @@ class EventEspressoEvent extends EventAdaptor
                 WHERE Event_CPT.post_type = 'espresso_events'
                     AND Event_CPT.post_status IN ('publish', 'sold_out')
                     AND ((Datetime.DTT_deleted = 0) OR Datetime.DTT_ID IS NULL)
-                    AND Datetime.DTT_EVT_start > '2025-05-01 00:00:00'
-                    AND Datetime.DTT_EVT_end < '2025-05-31 23:59:59'
+                    AND Datetime.DTT_EVT_start >= '2025-05-01 00:00:00'
+                    AND Datetime.DTT_EVT_start <= '2025-07-31 23:59:59'
                 GROUP BY Event_CPT.ID
                 LIMIT 50
              */
@@ -279,12 +284,12 @@ class EventEspressoEvent extends EventAdaptor
                     [
                         $this->setWhereConditionsForStatus(
                             [
-                                'Datetime.DTT_EVT_start' => [
+                                'Datetime.DTT_EVT_start*after'  => [
                                     '>=',
                                     $date_range->startTimestamp(),
                                 ],
-                                'Datetime.DTT_EVT_end'   => [
-                                    '<',
+                                'Datetime.DTT_EVT_start*before' => [
+                                    '<=',
                                     $date_range->endTimestamp(),
                                 ],
                             ]
@@ -302,7 +307,7 @@ class EventEspressoEvent extends EventAdaptor
 
 
     /**
-     * set and get the total number of events
+     * set and get the total number of events that start within date range
      *
      * @param DateRange $date_range
      * @return int
@@ -319,19 +324,19 @@ class EventEspressoEvent extends EventAdaptor
                 WHERE Event_CPT.post_type = 'espresso_events'
                     AND Event_CPT.post_status IN ('publish','sold_out')
                     AND ((Datetime.DTT_deleted = 0) OR Datetime.DTT_ID IS NULL)
-                    AND Datetime.DTT_EVT_start > '2025-05-01 00:00:00'
-                    AND Datetime.DTT_EVT_end < '2025-05-31 23:59:59'
+                    AND Datetime.DTT_EVT_start >= '2025-05-01 00:00:00'
+                    AND Datetime.DTT_EVT_start <= '2025-07-31 23:59:59'
              */
             $this->event_count = EEM_Event::instance()->count(
                 [
                     $this->setWhereConditionsForStatus(
                         [
-                            'Datetime.DTT_EVT_start' => [
+                            'Datetime.DTT_EVT_start*after'  => [
                                 '>=',
                                 $date_range->startTimestamp(),
                             ],
-                            'Datetime.DTT_EVT_end'   => [
-                                '<',
+                            'Datetime.DTT_EVT_start*before' => [
+                                '<=',
                                 $date_range->endTimestamp(),
                             ],
                         ]

@@ -56,6 +56,8 @@ abstract class EventAdaptor
 
 
     /**
+     * Returns all events that start within the specified date range.
+     *
      * @param DateRange $date_range DateRange object
      * @param int $offset           [optional] offset for pagination, defaults to $this->query_limit
      * @return CalendarEvent[]
