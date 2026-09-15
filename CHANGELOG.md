@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Releases
 
+### 1.0.15
+
+
+#### Fixed
+ - [Fix: register Calendar Plus assets when script registry already exists (#2294)](https://github.com/eventespresso/cafe/pull/2294)
+
+
+
+
+
+
+
 ### 1.0.14
 
 #### Added

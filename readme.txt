@@ -3,7 +3,7 @@
 Contributors: eventespresso, garthkoyle, pebblo, charliespider, mohsinsr, alexkuc, knazart
 Tags: events, calendar, event, schedule, organizer
 Donate link: https://calendarplus.io
-Stable tag: 1.0.14
+Stable tag: 1.0.15
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
@@ -25,51 +25,51 @@ Looking for additional features like recurring events, electronic tickets, ticke
 
 Whether your event calendar is new and growing or your events calendar is big and full, Calendar+ can make any organization look good; small businesses, musicians, venues, restaurants, non-profits, schools, associations, clubs, fundraisers, agencies, etc. all look better and can reach their audience better with Calendar+
 
-== :star:️ Features ==
+== ⭐️ Features ==
 
-:heavy_check_mark: Quickly create events (Title, start/end date/time, description, featured image)
-:heavy_check_mark: Enable or disable views with tooltips (month, week, day views, each mobile optimized)
-:heavy_check_mark: Filters (keyword, venue, category, tag, location)
-:heavy_check_mark: Edit text strings for easy translation
-:heavy_check_mark: Enable/Disable display view settings
-:heavy_check_mark: Set Default view
-:heavy_check_mark: Keep/hide filters on mobile devices
-:heavy_check_mark: Enable/Disable thumbnails on the calendar
-:heavy_check_mark: Enable/Disable Tooltip/Popover
-:heavy_check_mark: Edit text labels (easy translation)
-:heavy_check_mark: Choose from multiple date/time formats
-:heavy_check_mark: Easily personalize your calendar with over 20 customizable color settings using the built-in color picker
-:heavy_check_mark: and more!
+✔️ Quickly create events (Title, start/end date/time, description, featured image)
+✔️ Enable or disable views with tooltips (month, week, day views, each mobile optimized)
+✔️ Filters (keyword, venue, category, tag, location)
+✔️ Edit text strings for easy translation
+✔️ Enable/Disable display view settings
+✔️ Set Default view
+✔️ Keep/hide filters on mobile devices
+✔️ Enable/Disable thumbnails on the calendar
+✔️ Enable/Disable Tooltip/Popover
+✔️ Edit text labels (easy translation)
+✔️ Choose from multiple date/time formats
+✔️ Easily personalize your calendar with over 20 customizable color settings using the built-in color picker
+✔️ and more!
 
-== :coffee:️ Event Espresso Decaf Includes: ==
+== ☕️ Event Espresso Decaf Includes: ==
 
-:heavy_check_mark: Saved venues
-:heavy_check_mark: Widget: Upcoming events list
-:heavy_check_mark: Event Taxonomies (Categories & Tags)
-:heavy_check_mark: Google Calendar and iCal exporting
-:heavy_check_mark: WP REST API endpoints
-:heavy_check_mark: Tested on the latest versions of WordPress and major theme frameworks such as Avada, Divi, Enfold, Genesis, and many more.
-:heavy_check_mark: Extensive template tags for customization
-:heavy_check_mark: Hooks & filters galore
-:heavy_check_mark: Debug mode for developers
-:heavy_check_mark: Dozens of add-on plugin extensions
+✔️ Saved venues
+✔️ Widget: Upcoming events list
+✔️ Event Taxonomies (Categories & Tags)
+✔️ Google Calendar and iCal exporting
+✔️ WP REST API endpoints
+✔️ Tested on the latest versions of WordPress and major theme frameworks such as Avada, Divi, Enfold, Genesis, and many more.
+✔️ Extensive template tags for customization
+✔️ Hooks & filters galore
+✔️ Debug mode for developers
+✔️ Dozens of add-on plugin extensions
 
-== :coffee:️:coffee:️ Event Espresso Premium Includes: ==
+== ☕️☕️ Event Espresso Premium Includes: ==
 
-:heavy_check_mark: Collect attendee information for each event ticket or registration sold
-:heavy_check_mark: Sell tickets and registrations to groups
-:heavy_check_mark: Create multiple dates for the same event
-:heavy_check_mark: Create custom registration forms
-:heavy_check_mark: Create conditional registration form questions
-:heavy_check_mark: Ask specific questions in the registration form depending on the attendees choose
-:heavy_check_mark: Distribute digital tickets
-:heavy_check_mark: Scan QR code tickets and validate them at the door by using our mobile apps
-:heavy_check_mark: Accept payments with Square, Stripe, and more payment options
-:heavy_check_mark: Automate and customize confirmation emails to staff and attendees
-:heavy_check_mark: Google Maps
-:heavy_check_mark: and much more.
+✔️ Collect attendee information for each event ticket or registration sold
+✔️ Sell tickets and registrations to groups
+✔️ Create multiple dates for the same event
+✔️ Create custom registration forms
+✔️ Create conditional registration form questions
+✔️ Ask specific questions in the registration form depending on the attendees choose
+✔️ Distribute digital tickets
+✔️ Scan QR code tickets and validate them at the door by using our mobile apps
+✔️ Accept payments with Square, Stripe, and more payment options
+✔️ Automate and customize confirmation emails to staff and attendees
+✔️ Google Maps
+✔️ and much more.
 
-== :ring_buoy: Documentation ==
+== 🛟 Documentation ==
 
 All of our documentation can be found in [our Knowledgebase](https://calendarplus.io).
 
@@ -79,12 +79,12 @@ If you need help, post your questions in the [WordPress.org forum](https://wordp
 
 Our Free Plugins:
 
-:coffee:️ [Event Espresso](https://wordpress.org/plugins/event-espresso-decaf)
+☕️ [Event Espresso](https://wordpress.org/plugins/event-espresso-decaf)
 
 Our Premium Plugins and Services:
 
-:coffee:️ [Events Espresso](https://eventespresso.com)
-:mortar_board: [Event Smart](https://eventsmart.com) (service)
+☕️ [Events Espresso](https://eventespresso.com)
+🎓 [Event Smart](https://eventsmart.com) (service)
 
 == Installation ==
 
@@ -185,6 +185,11 @@ Please see the changelog for the complete list of changes in this release.
 Remember to always make a backup of your database and files before updating!
 
 == Changelog ==
+
+= [1.0.15] 2026-09-15 =
+
+**Fixed**
+* Fix calendar assets not loading when another plugin registers scripts before Calendar Plus
 
 = [1.0.14] 2026-09-11 =
 

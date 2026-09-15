@@ -52,8 +52,17 @@ class Assets extends CalendarPlusModule
         if ($this->isWordPressThemesAdmin()) {
             return;
         }
-        add_action('wp_default_scripts', [$this, 'registerScripts']);
-        add_action('wp_default_styles', [$this, 'registerStyles']);
+        // Register immediately if the registry already fired, else hook — another plugin may create it before us.
+        if (did_action('wp_default_scripts')) {
+            $this->registerScripts(wp_scripts());
+        } else {
+            add_action('wp_default_scripts', [$this, 'registerScripts']);
+        }
+        if (did_action('wp_default_styles')) {
+            $this->registerStyles(wp_styles());
+        } else {
+            add_action('wp_default_styles', [$this, 'registerStyles']);
+        }
         add_action('admin_enqueue_scripts', [$this, 'registerDependencies'], 0);
         add_action('wp_enqueue_scripts', [$this, 'registerDependencies'], 0);
     }

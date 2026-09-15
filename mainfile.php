@@ -3,7 +3,7 @@
  * Plugin Name: Events Calendar Plus
  * Plugin URI:  https://www.eventespresso.com
  * Description: Events Calendar Plus (Calendar+) is the Universal Events Calendar for WordPress - display ALL the events!
- * Version:     1.0.14
+ * Version:     1.0.15
  * Author:      Event Espresso
  * Author URI:  https://www.eventespresso.com/
  * License:     GPLv3
@@ -38,7 +38,7 @@ const EVENTS_CALENDAR_PLUS_SLUG = 'events-calendar-plus';
 /**
  * The current version of the plugin. Uses semantic versioning.
  */
-const EVENTS_CALENDAR_PLUS_VERSION = '1.0.14';
+const EVENTS_CALENDAR_PLUS_VERSION = '1.0.15';
 
 const EVENTS_CALENDAR_PLUS_MIN_PHP_VERSION = '7.4';
 
