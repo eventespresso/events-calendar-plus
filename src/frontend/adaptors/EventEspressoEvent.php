@@ -227,12 +227,16 @@ class EventEspressoEvent extends EventAdaptor
             $tags = $this->getEventTags($event->ID());
             $tags = implode(', ', $tags);
 
+            $pricing = $event->display_ticket_selector()
+                ? (new TicketPricingResolver())->forDatetime($datetime)
+                : null;
+
             return new CalendarEvent(
                 $event->ID(),                                               // int $id
                 $event_name,                                                // string $title
                 $description,                                               // string $description
                 $categories,                                                // string $event_type
-                esc_url($permalink),                                        // string $url
+                esc_url_raw($permalink),                                    // string $url
                 DateTimeHelper::convertDatetimeToImmutable($start_date),    // DateTimeImmutable $start
                 DateTimeHelper::convertDatetimeToImmutable($end_date),      // DateTimeImmutable $end
                 $is_all_day,                                                // bool $all_day = false
@@ -246,7 +250,8 @@ class EventEspressoEvent extends EventAdaptor
 					$city,
 					$state,
 					$country
-				)
+				),
+                $pricing                                                    // array|null $pricing
             );
         } catch (Exception $exception) {
             $this->logError($exception);

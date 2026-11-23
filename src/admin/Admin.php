@@ -6,6 +6,7 @@ use EventEspresso\CalendarPlus\api\CalendarPlusConfig;
 use EventEspresso\CalendarPlus\Assets;
 use EventEspresso\CalendarPlus\CalendarPlusModule;
 use EventEspresso\CalendarPlus\CalendarPlusPostType;
+use EventEspresso\CalendarPlus\CustomView;
 use EventEspresso\CalendarPlus\frontend\EventDataHandler;
 
 /**
@@ -145,7 +146,7 @@ class Admin extends CalendarPlusModule
             [],
             $this->version()
         );
-        if ($page !== 'calendar-event_page_events-calendar-plus-settings') {
+        if ($page !== CustomView::SETTINGS_PAGE_HOOK) {
             // only enqueue on the Calendar Plus Admin Settings page
             return;
         }

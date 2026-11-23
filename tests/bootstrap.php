@@ -3,10 +3,10 @@
 /**
  * PHPUnit bootstrap for the Events Calendar Plus plugin.
  *
- * These are pure unit tests: no database and no full WordPress bootstrap.
- * The handful of WP functions the exercised code path touches are stubbed
- * below, but only when absent, so the suite also runs unchanged inside a
- * WP-bootstrapped test environment.
+ * These are pure unit tests: no database, no full WordPress bootstrap, and no
+ * EE core. The handful of WP functions and EE core classes the exercised code
+ * paths touch are stubbed below, but only when absent, so the suite also runs
+ * unchanged inside a WP- and EE-core-bootstrapped test environment.
  */
 
 declare(strict_types=1);
@@ -213,6 +213,147 @@ if (! function_exists('esc_url_raw')) {
     {
         return $url;
     }
+}
+
+if (! function_exists('add_filter')) {
+    function add_filter($hook, $callback, $priority = 10, $accepted_args = 1): bool
+    {
+        $GLOBALS['wp_test_filters'][$hook][] = $callback;
+        return true;
+    }
+}
+
+if (! function_exists('remove_all_filters')) {
+    function remove_all_filters($hook, $priority = false): bool
+    {
+        unset($GLOBALS['wp_test_filters'][$hook]);
+        return true;
+    }
+}
+
+if (! function_exists('apply_filters')) {
+    function apply_filters($hook, $value, ...$args)
+    {
+        foreach ($GLOBALS['wp_test_filters'][$hook] ?? [] as $callback) {
+            $value = $callback($value, ...$args);
+        }
+        return $value;
+    }
+}
+
+/*
+ * Minimal fakes for the EE core classes TicketPricingResolver touches, shaped
+ * just enough to be mocked/instantiated.
+ */
+
+if (! class_exists('EE_Ticket')) {
+    class EE_Ticket
+    {
+        public function isPublicOnly(): bool
+        {
+            return true;
+        }
+
+        public function get_ticket_total_with_taxes(bool $no_cache = false): float
+        {
+            return 0.0;
+        }
+
+        public function get_ticket_subtotal()
+        {
+            return 0.0;
+        }
+
+        public function min()
+        {
+            return 0;
+        }
+
+        public function max()
+        {
+            return -1;
+        }
+    }
+}
+
+if (! class_exists('EE_Tax_Config')) {
+    class EE_Tax_Config
+    {
+        public $prices_displayed_including_taxes = true;
+    }
+}
+
+if (! class_exists('EE_Config')) {
+    class EE_Config
+    {
+        private static ?EE_Config $instance = null;
+
+        public ?EE_Tax_Config $tax_settings = null;
+
+        public $template_settings = null;
+
+
+        public static function instance(): self
+        {
+            if (! self::$instance instanceof self) {
+                self::$instance                    = new self();
+                self::$instance->tax_settings      = new EE_Tax_Config();
+                self::$instance->template_settings = (object) [
+                    'EED_Ticket_Selector' => (object) ['show_expired_tickets' => true],
+                ];
+            }
+            return self::$instance;
+        }
+    }
+}
+
+if (! class_exists('EE_Datetime')) {
+    class EE_Datetime
+    {
+        public function tickets(array $where_params = [])
+        {
+            return [];
+        }
+    }
+}
+
+/*
+ * Fake for the EE core currency config CurrencyData reads. $next_config and $should_throw
+ * let a test control what getCurrencyConfig() returns without a real EE core install.
+ */
+
+if (! class_exists('EE_Currency_Config')) {
+    class EE_Currency_Config
+    {
+        public static ?EE_Currency_Config $next_config = null;
+
+        public static bool $should_throw = false;
+
+        public string $code = 'USD';
+
+        public string $sign = '$';
+
+        public $sign_b4 = true;
+
+        public int $dec_plc = 2;
+
+        public string $dec_mrk = '.';
+
+        public string $thsnds = ',';
+
+
+        public static function getCurrencyConfig(?string $CNT_ISO = ''): self
+        {
+            if (self::$should_throw) {
+                throw new Exception('Simulated currency config failure');
+            }
+            return self::$next_config ?? new self();
+        }
+    }
+}
+
+if (! defined('WP_DEBUG')) {
+    define('WP_DEBUG', false);
 }
 
 if (! defined('EVENTS_CALENDAR_PLUS_BASE_PATH')) {

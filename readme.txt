@@ -3,9 +3,9 @@
 Contributors: eventespresso, garthkoyle, pebblo, charliespider, mohsinsr, alexkuc, knazart
 Tags: events, calendar, event, schedule, organizer
 Donate link: https://calendarplus.io
-Stable tag: 1.0.15
+Stable tag: 1.0.16
 Requires at least: 6.0
-Tested up to: 7.1
+Tested up to: 7.1.5
 Requires PHP: 7.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -185,6 +185,11 @@ Please see the changelog for the complete list of changes in this release.
 Remember to always make a backup of your database and files before updating!
 
 == Changelog ==
+
+= **v1.0.16** =
+**Added**
+* Show event price ranges and currency data
+* Add support for the Calendar+ List View and Grid View add-ons
 
 = [1.0.15] 2026-09-15 =
 

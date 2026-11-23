@@ -61,6 +61,8 @@ class CalendarEvent
 
     private Venue $venue;
 
+    private ?array $pricing;
+
 
     /**
      * @param int               $id
@@ -75,6 +77,7 @@ class CalendarEvent
      * @param string            $class_name
      * @param string            $tags
      * @param Venue|null        $venue
+     * @param array|null        $pricing  ['minPrice' => float, 'maxPrice' => float]
      */
     public function __construct(
         int $id,
@@ -88,7 +91,8 @@ class CalendarEvent
         string $image = '',
         string $class_name = '',
         string $tags = '',
-        ?Venue $venue = null
+        ?Venue $venue = null,
+        ?array $pricing = null
     ) {
         $this->ID          = $id;
         $this->all_day     = $all_day;
@@ -99,6 +103,7 @@ class CalendarEvent
         $this->event_days  = $this->interval->days;
         $this->event_type  = $event_type;
         $this->image       = $image;
+        $this->pricing     = $pricing;
         $this->start       = $start;
         $this->tags        = $tags;
         $this->title       = $title;
@@ -149,6 +154,7 @@ class CalendarEvent
             'tags'        => $this->tags,
             'title'       => $this->title,
             'url'         => $this->url,
+            'pricing'     => $this->pricing,
             'venue'       => [
                 'address'   => $this->venue->address(),
                 'city'      => $this->venue->city(),

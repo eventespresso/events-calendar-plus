@@ -119,6 +119,7 @@ class CalendarPlusConfig
         $settings = [
                 'apiUrl' => CalendarPlusAPI::endpointURL(),
                 'settingsApiUrl' => CalendarPlusAPI::endpointURL(true),
+                'currency' => (new CurrencyData())->resolve(),
             ] + $this->settings;
         if ($add_nonce) {
             $settings['nonce'] = wp_create_nonce(CalendarPlusAPI::NONCE_ACTION_UPDATE_SETTINGS);

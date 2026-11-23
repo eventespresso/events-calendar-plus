@@ -400,11 +400,11 @@ msgstr ""
 msgid "Filters"
 msgstr ""
 
-#: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/CardsGridSection.tsx:121
+#: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/CardsGridSection.tsx:122
 msgid "Not Specified. For more details, please contact the organizer."
 msgstr ""
 
-#: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/CardsGridSection.tsx:130
+#: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/CardsGridSection.tsx:131
 #: domains/calendarPlus/frontend/src/components/calendar/event-detail-modal/GetDirection.tsx:42
 msgid "Get Directions"
 msgstr ""
